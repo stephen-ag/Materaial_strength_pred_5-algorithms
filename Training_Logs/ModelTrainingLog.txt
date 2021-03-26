@@ -1,0 +1,42 @@
+2021-03-21/17:05:20		Start of Training
+2021-03-21/17:05:20		Entered the get_data method of the Data_Getter class
+2021-03-21/17:05:20		Data Load Successful.Exited the get_data method of the Data_Getter class
+2021-03-21/17:05:20		Entered the is_null_present method of the Preprocessor class
+2021-03-21/17:05:20		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2021-03-21/17:05:20		Entered the separate_label_feature method of the Preprocessor class
+2021-03-21/17:05:20		Label Separation Successful. Exited the separate_label_feature method of the Preprocessor class
+2021-03-21/17:05:20		Entered the elbow_plot method of the KMeansClustering class
+2021-03-21/17:05:25		The optimum number of clusters is: 4 . Exited the elbow_plot method of the KMeansClustering class
+2021-03-21/17:05:25		Entered the create_clusters method of the KMeansClustering class
+2021-03-21/17:05:25		Entered the save_model method of the File_Operation class
+2021-03-21/17:05:25		Model File KMeans saved. Exited the save_model method of the Model_Finder class
+2021-03-21/17:05:25		succesfully created 4clusters. Exited the create_clusters method of the KMeansClustering class
+2021-03-21/17:05:25		Entered the get_best_model method of the Model_Finder class
+2021-03-21/17:05:25		Entered the get_best_params_for_linearReg method of the Model_Finder class
+2021-03-21/17:05:26		LinearRegression best params: {'copy_X': True, 'fit_intercept': True, 'normalize': True}. Exited the get_best_params_for_linearReg method of the Model_Finder class
+2021-03-21/17:05:26		Entered the RandomForestReg method of the Model_Finder class
+2021-03-21/17:05:48		RandomForestReg best params: {'bootstrap': False, 'max_features': 'log2', 'min_samples_split': 2, 'n_estimators': 10}. Exited the RandomForestReg method of the Model_Finder class
+2021-03-21/17:05:48		Entered the save_model method of the File_Operation class
+2021-03-21/17:05:48		Model File RandomForestRegressor1 saved. Exited the save_model method of the Model_Finder class
+2021-03-21/17:05:48		Entered the get_best_model method of the Model_Finder class
+2021-03-21/17:05:48		Entered the get_best_params_for_linearReg method of the Model_Finder class
+2021-03-21/17:05:48		LinearRegression best params: {'copy_X': True, 'fit_intercept': True, 'normalize': True}. Exited the get_best_params_for_linearReg method of the Model_Finder class
+2021-03-21/17:05:48		Entered the RandomForestReg method of the Model_Finder class
+2021-03-21/17:06:12		RandomForestReg best params: {'bootstrap': False, 'max_features': 'log2', 'min_samples_split': 2, 'n_estimators': 20}. Exited the RandomForestReg method of the Model_Finder class
+2021-03-21/17:06:12		Entered the save_model method of the File_Operation class
+2021-03-21/17:06:12		Model File RandomForestRegressor2 saved. Exited the save_model method of the Model_Finder class
+2021-03-21/17:06:12		Entered the get_best_model method of the Model_Finder class
+2021-03-21/17:06:12		Entered the get_best_params_for_linearReg method of the Model_Finder class
+2021-03-21/17:06:12		LinearRegression best params: {'copy_X': True, 'fit_intercept': True, 'normalize': True}. Exited the get_best_params_for_linearReg method of the Model_Finder class
+2021-03-21/17:06:12		Entered the RandomForestReg method of the Model_Finder class
+2021-03-21/17:06:34		RandomForestReg best params: {'bootstrap': False, 'max_features': 'log2', 'min_samples_split': 2, 'n_estimators': 10}. Exited the RandomForestReg method of the Model_Finder class
+2021-03-21/17:06:34		Entered the save_model method of the File_Operation class
+2021-03-21/17:06:34		Model File RandomForestRegressor0 saved. Exited the save_model method of the Model_Finder class
+2021-03-21/17:06:34		Entered the get_best_model method of the Model_Finder class
+2021-03-21/17:06:34		Entered the get_best_params_for_linearReg method of the Model_Finder class
+2021-03-21/17:06:34		LinearRegression best params: {'copy_X': True, 'fit_intercept': True, 'normalize': True}. Exited the get_best_params_for_linearReg method of the Model_Finder class
+2021-03-21/17:06:34		Entered the RandomForestReg method of the Model_Finder class
+2021-03-21/17:06:57		RandomForestReg best params: {'bootstrap': False, 'max_features': 'log2', 'min_samples_split': 2, 'n_estimators': 10}. Exited the RandomForestReg method of the Model_Finder class
+2021-03-21/17:06:57		Entered the save_model method of the File_Operation class
+2021-03-21/17:06:57		Model File RandomForestRegressor3 saved. Exited the save_model method of the Model_Finder class
+2021-03-21/17:06:57		Successful End of Training
