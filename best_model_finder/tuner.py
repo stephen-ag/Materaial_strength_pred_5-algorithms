@@ -5,9 +5,12 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import AdaBoostRegressor
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_squared_error,mean_absolute_error
 from sklearn.svm import SVC
-import xgboost as xgb
+from xgboost import XGBRegressor
+#import xgboost as xgb
+import pandas as pd
+import openpyxl
 
 
 class Model_Finder:
@@ -25,9 +28,11 @@ class Model_Finder:
         self.linearReg = LinearRegression()
         self.RandomForestReg = RandomForestRegressor()
         self.DecisionTreeReg = DecisionTreeRegressor()
-        self.XGBoostReg = xgb.XGBRegressor()
+        self.XGBoostReg = XGBRegressor()
         self.AdaboostReg = AdaBoostRegressor()
         self.svm = SVC()
+        #self.mse = mean_squared_error()
+        #self.mae = mean_absolute_error()
 
 
 
@@ -91,11 +96,12 @@ class Model_Finder:
             self.param_XGboost = {
                 'learning_rate': [.001, 0.01, .1],
                 'max_depth': [2, 6, 8, 10, 14],
-                'min_child_weight': [1,3,5,7],
-                'gamma': [0.0,0.1,0.2]
+                'min_child_weight': [1,3,5,7]
             }
+                #'gamma': [0.0,0.1,0.2]
+
             # Creating an object of the Grid Search class
-            self.grid = GridSearchCV(self.XGBoostReg, self.param_XGboost, n_jobs =-1, cv=5)
+            self.grid = GridSearchCV(self.XGBoostReg, self.param_XGboost, verbose=3, cv=5)
             # finding the best parameters
             self.grid.fit(train_x, train_y)
 
@@ -103,13 +109,12 @@ class Model_Finder:
             self.learning_rate = self.grid.best_params_['learning_rate']
             self.max_depth = self.grid.best_params_['max_depth']
             self.min_child_weight = self.grid.best_params_['min_child_weight']
-            self.gamma = self.grid.best_params_['gamma']
+            #self.gamma = self.grid.best_params_['gamma']
 
             # creating a new model with the best parameters
-            self.xgboostReg = xgb.XGBRegressor(objective ='reg:linear',
-                                               learning_rate = self.learning_rate,
-                                               max_depth = self.max_depth, gamma = self.gamma,
-                                               min_child_weight = self.min_child_weight)
+            self.xgboostReg = XGBRegressor(learning_rate = self.learning_rate,
+                                           max_depth = self.max_depth,
+                                           min_child_weight = self.min_child_weight)
 
             # training the mew models
             self.xgboostReg.fit(train_x, train_y)
@@ -139,7 +144,7 @@ class Model_Finder:
             }
 
             # Creating an object of the Grid Search class
-            self.grid = GridSearchCV(self.DecisionTreeReg, self.param_decision_Tree, n_jobs =-1, cv=5)
+            self.grid = GridSearchCV(self.DecisionTreeReg, self.param_decision_Tree,verbose=3, n_jobs =1, cv=5)
             # finding the best parameters
             self.grid.fit(train_x, train_y)
 
@@ -180,7 +185,7 @@ class Model_Finder:
 
             # Creating an object of the Grid Search class
             self.grid = GridSearchCV(self.AdaboostReg, self.param_ada_boost,
-                                     scoring='neg_mean_squared_error', n_jobs =-1, cv=5)
+                                     scoring='neg_mean_squared_error',verbose=3, n_jobs =1, cv=5)
             # finding the best parameters
             self.grid.fit(train_x, train_y)
 
@@ -193,10 +198,10 @@ class Model_Finder:
                                                  learning_rate=self.learning_rate,random_state=1)
 
             #training the mew models
-            self.decisionTreeReg.fit(train_x, train_y)
+            self.adaboostReg.fit(train_x, train_y)
             self.logger_object.log(self.file_object,
                                    'Ada boost best params: ' + str(
-                                       self.grid.best_params_) + '. Exited the DecisionTreeReg  method of the Model_Finder class')
+                                       self.grid.best_params_) + '. Exited the AdaBoost Reg  method of the Model_Finder class')
             return self.adaboostReg
         except Exception as e:
             self.logger_object.log(self.file_object,
@@ -226,7 +231,6 @@ class Model_Finder:
             # initializing with different combination of parameters
             self.param_grid_linearReg = {
                 'fit_intercept': [True, False], 'normalize': [True, False], 'copy_X': [True, False]
-
             }
             # Creating an object of the Grid Search class
             self.grid= GridSearchCV(self.linearReg,self.param_grid_linearReg, verbose=3,cv=5)
@@ -254,6 +258,15 @@ class Model_Finder:
                                    'LinearReg Parameter tuning  failed. Exited the get_best_params_for_linearReg method of the Model_Finder class')
             raise Exception()
 
+    def get_model_metrics(self,name):
+
+        self.logger_object.log(self.file_object,
+                               'Entered the get_model Metrics of the Model_Finder class')
+
+        self.Reg_metrics = pd.DataFrame(self.Regression_score)
+        self.Reg_metrics.to_excel(name+'.xlsx')
+
+        return self.Reg_metrics
 
     def get_best_model(self,train_x,train_y,test_x,test_y):
         """
@@ -271,47 +284,69 @@ class Model_Finder:
                                'Entered the get_best_model method of the Model_Finder class')
 
         try:
+
+            self.decisionTreeReg = self.get_best_params_for_decisionTree(train_x, train_y)
+            self.prediction_decisionTreeReg = self.decisionTreeReg.predict(test_x)  # Predictions using the decisiontreeReg Model
+            self.prediction_decisionTreeReg_error = r2_score(test_y, self.prediction_decisionTreeReg)
+            self.decisionTreeReg_mse=mean_squared_error(test_y, self.prediction_decisionTreeReg)
+            self.decisionTreeReg_mae=mean_absolute_error(test_y, self.prediction_decisionTreeReg)
+
             # create best model for Linear Regression
             self.LinearReg= self.get_best_params_for_linearReg(train_x, train_y)
             self.prediction_LinearReg = self.LinearReg.predict(test_x) # Predictions using the LinearReg Model
             self.LinearReg_error = r2_score(test_y,self.prediction_LinearReg)
+            self.LinearReg_mse=mean_squared_error(test_y, self.prediction_LinearReg)
+            self.LinearReg_mae=mean_absolute_error(test_y, self.prediction_LinearReg)
 
 
-             # create best model for randomforest
+         # create best model for randomforest
             self.randomForestReg = self.get_best_params_for_Random_Forest_Regressor(train_x, train_y)
             self.prediction_randomForestReg = self.randomForestReg.predict(test_x)  # Predictions using the randomForestReg Model
             self.prediction_randomForestReg_error = r2_score(test_y,self.prediction_randomForestReg)
+            self.randomForestReg_mse=mean_squared_error(test_y, self.prediction_randomForestReg)
+            self.randomForestReg_mae=mean_absolute_error(test_y, self.prediction_randomForestReg)
 
             # create best model for XGBoost
             self.XGBoostReg = self.get_best_params_for_xgboost(train_x, train_y)
             self.prediction_xgboostReg = self.XGBoostReg.predict(test_x)  # Predictions using the xgboostReg Model
             self.prediction_xgboostReg_error = r2_score(test_y, self.prediction_xgboostReg)
+            self.XGBoostReg_mse=mean_squared_error(test_y, self.prediction_xgboostReg)
+            self.XGBoostReg_mae=mean_absolute_error(test_y, self.prediction_xgboostReg)
+          # create best model for Decision Tree
 
-            # create best model for Decision Tree
-            self.decisionTreeReg = self.get_best_params_for_decisionTree(train_x, train_y)
-            self.prediction_decisionTreeReg = self.decisionTreeReg.predict(test_x)  # Predictions using the decisiontreeReg Model
-            self.prediction_decisionTreeReg_error = r2_score(test_y, self.prediction_decisionTreeReg)
 
             # create best model for Ada boost
             self.adaboostReg = self.get_best_params_for_adaboostReg(train_x, train_y)
             self.prediction_adaboostReg = self.adaboostReg.predict(test_x)  # Predictions using the adaboostReg Model
             self.prediction_adaboostReg_error = r2_score(test_y, self.prediction_adaboostReg)
+            self.adaboostReg_mse=mean_squared_error(test_y, self.prediction_adaboostReg)
+            self.adaboostReg_mae=mean_absolute_error(test_y, self.prediction_adaboostReg)
 
-            self.r2score={'LinearRegression': [self.LinearReg_error,self.LinearReg],
-                                 "RandomForestRegressor": [self.prediction_randomForestReg_error,self.randomForestReg],
-                                 "XG_BoostRegressor": [self.prediction_xgboostReg_error,self.XGBoostReg],
-                                 "DecisionTreeRegressor": [self.prediction_decisionTreeReg_error,self.decisionTreeReg],
-                                 "Ada_BoostRegressor": [self.prediction_adaboostReg_error,self.adaboostReg]
+            self.Regression_score={"LinearRegression":[self.LinearReg_error,self.LinearReg,self.LinearReg_mse,self.LinearReg_mae],
+                          "RandomForestRegressor":[self.prediction_randomForestReg_error,self.randomForestReg,
+                                                   self.randomForestReg_mse,self.randomForestReg_mae],
+                          "XG_BoostRegressor" : [self.prediction_xgboostReg_error,self.XGBoostReg,
+                                                 self.XGBoostReg_mse,self.XGBoostReg_mae],
+                          "DecisionTreeRegressor" : [self.prediction_decisionTreeReg_error,self.decisionTreeReg,
+                                                     self.decisionTreeReg_mse,self.decisionTreeReg_mae],
+                          "Ada_BoostRegressor" : [self.prediction_adaboostReg_error,self.adaboostReg,
+                                                  self.adaboostReg_mse,self.adaboostReg_mae]
                           }
 
-            self.select=list(self.r2score.values())[0][0] # assigming first value from key value pair to variable
-            self.name = list(self.r2score.keys())[0][0] # assigming first key from key value pair to variable
-            for i in self.r2score.items(): # for each i in a key value pair called by items()
+
+            # metrics table
+
+            self.select=list(self.Regression_score.values())[0][0] # assigming first value from key value pair to variable
+            #self.name = list(self.r2score.keys())[0][0] # assigming first key from key value pair to variable
+
+            for i in self.Regression_score.items(): # for each i in a key value pair called by items()
                 if i[1][0]>=self.select:
                     self.select=i[1][0]
-                    self.name=i[0][0]
+                    self.name=i[0]
                     self.model=i[1][1]
-                return self.name, self.model
+            print(self.name,self.model," r2 score=", self.select)
+            return self.name, self.model
+
             #comparing the two models
             #if(self.LinearReg_error <  self.prediction_randomForestReg_error):
             #    return 'RandomForestRegressor',self.randomForestReg
@@ -325,4 +360,5 @@ class Model_Finder:
             self.logger_object.log(self.file_object,
                                    'Model Selection Failed. Exited the get_best_model method of the Model_Finder class')
             raise Exception()
+
 

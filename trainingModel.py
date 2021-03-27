@@ -1,5 +1,11 @@
 """
 This is the Entry point for Training the Machine Learning Model.
+this is regression problem  and  three regression metrics used
+Mean Absolute error
+Mean Squared error and
+R2
+
+for classification algo use accuracy/logloss and AUC with confusion matrix and classifiation report
 
 Written By: iNeuron Intelligence
 Version: 1.0
@@ -89,6 +95,8 @@ class trainModel:
                 #getting the best model for each of the clusters
                 best_model_name,best_model=model_finder.get_best_model(x_train_scaled,y_train,x_test_scaled,y_test)
 
+                model_metrics =model_finder.get_model_metrics(best_model_name+str(i))
+
                 #saving the best model to the directory.
                 file_op = file_methods.File_Operation(self.file_object,self.log_writer)
                 save_model=file_op.save_model(best_model,best_model_name+str(i))
@@ -102,3 +110,6 @@ class trainModel:
             self.log_writer.log(self.file_object, 'Unsuccessful End of Training')
             self.file_object.close()
             raise Exception
+
+trainModelObj = trainModel()  # object initialization
+trainModelObj.trainingModel()  # training the model for the files in the table
