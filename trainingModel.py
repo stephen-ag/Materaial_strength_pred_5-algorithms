@@ -23,26 +23,45 @@ from best_model_finder import tuner
 from file_operations import file_methods
 from application_logging import logger
 
+
+from AzureBlobStorage.AzureStorageMgmt import AzureBlobManagement
+# from folder and python file name import class name
+from application_logging.loggerDB import App_LoggerDB
+#from folder and python file import class name
+from application_logging.logger import App_Logger
+
 #Creating the common Logging object
 
 
 class trainModel:
 
-    def __init__(self):
-        self.log_writer = logger.App_Logger()
-        self.file_object = open("Training_Logs/ModelTrainingLog.txt", 'a+')
+    def __init__(self,execution_id):
+        #self.log_writer = logger.App_Logger()
+        #self.file_object = open("Training_Logs/ModelTrainingLog.txt", 'a+')
+
+        self.log_db_writer=App_LoggerDB(execution_id=execution_id)
+        self.log_database="strength_training_log"
+        self.log_collection="stg_training_main_log"
+        self.execution_id=execution_id
+
     def trainingModel(self):
         # Logging the start of Training
-        self.log_writer.log(self.file_object, 'Start of Training')
+        self.log_db_writer.log(self.log_database, self.log_collection, "Start of Training")
+        print("training started")
         try:
             # Getting the data from the source
-            data_getter=data_loader.Data_Getter(self.file_object,self.log_writer)
+            data_getter=data_loader.Data_Getter(self.log_database, self.log_collection,self.execution_id)
             data=data_getter.get_data()
+
+            if data.__len__()==0:
+                self.log_db_writer.log(self.log_database,self.log_collection,"No record found to train model")
+                print("No previous file available")
+                return 0
 
 
             """doing the data preprocessing"""
 
-            preprocessor=preprocessing.Preprocessor(self.file_object,self.log_writer)
+            preprocessor=preprocessing.Preprocessor(self.log_database,self.log_collection,self.execution_id)
 
             # check if missing values are present in the dataset
             is_null_present,cols_with_missing_values=preprocessor.is_null_present(data)
@@ -61,13 +80,16 @@ class trainModel:
             #X=preprocessor.remove_columns(X,cols_to_drop)
 
             X = preprocessor.logTransformation(X)
+            print(X)
             """ Applying the clustering approach"""
 
-            kmeans=clustering.KMeansClustering(self.file_object,self.log_writer) # object initialization.
+            kmeans=clustering.KMeansClustering(self.execution_id) # object initialization.
             number_of_clusters=kmeans.elbow_plot(X)  #  using the elbow plot to find the number of optimum clusters
 
             # Divide the data into clusters
             X=kmeans.create_clusters(X,number_of_clusters)
+            print("cluster shape details")
+            print(X)
 
             #create a new column in the dataset consisting of the corresponding cluster assignments.
             X['Labels']=Y
@@ -90,7 +112,7 @@ class trainModel:
                 x_train_scaled = preprocessor.standardScalingData(x_train)
                 x_test_scaled = preprocessor.standardScalingData(x_test)
 
-                model_finder=tuner.Model_Finder(self.file_object,self.log_writer) # object initialization
+                model_finder=tuner.Model_Finder(self.log_database,self.log_collection,self.execution_id) # object initialization
 
                 #getting the best model for each of the clusters
                 best_model_name,best_model=model_finder.get_best_model(x_train_scaled,y_train,x_test_scaled,y_test)
@@ -98,18 +120,21 @@ class trainModel:
                 model_metrics =model_finder.get_model_metrics(best_model_name+str(i))
 
                 #saving the best model to the directory.
-                file_op = file_methods.File_Operation(self.file_object,self.log_writer)
+                file_op = file_methods.File_Operation(self.log_database,self.log_collection,self.execution_id)
+                print(best_model_name + str(i))
                 save_model=file_op.save_model(best_model,best_model_name+str(i))
 
+
+
             # logging the successful Training
-            self.log_writer.log(self.file_object, 'Successful End of Training')
-            self.file_object.close()
+            self.log_db_writer.log(self.log_database,self.log_collection, 'Successful End of Training')
+            #self.log_database.close()
 
         except Exception:
             # logging the unsuccessful Training
-            self.log_writer.log(self.file_object, 'Unsuccessful End of Training')
-            self.file_object.close()
+            self.log_db_writer.log(self.log_database,self.log_collection, 'Unsuccessful End of Training')
+            #self.log_database.close()
             raise Exception
 
-trainModelObj = trainModel()  # object initialization
-trainModelObj.trainingModel()  # training the model for the files in the table
+#trainModelObj = trainModel(1111)  # object initialization
+#trainModelObj.trainingModel()  # training the model for the files in the table

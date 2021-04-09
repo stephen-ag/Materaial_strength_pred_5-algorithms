@@ -15,7 +15,7 @@ class dataTransformPredict:
 
                   """
 
-     def __init__(self):
+     def __init__(self,execution_id):
           self.goodDataPath = "Prediction_Raw_Files_Validated/Good_Raw"
           self.logger = App_Logger()
 

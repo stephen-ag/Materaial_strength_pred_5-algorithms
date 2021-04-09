@@ -8,6 +8,8 @@ from trainingModel import trainModel
 from training_Validation_Insertion import train_validation
 import flask_monitoringdashboard as dashboard
 from predictFromModel import prediction
+import json
+import uuid
 
 os.putenv('LANG', 'en_US.UTF-8')
 os.putenv('LC_ALL', 'en_US.UTF-8')
@@ -25,30 +27,35 @@ def home():
 @cross_origin()
 def predictRouteClient():
     try:
+        execution_id = str(uuid.uuid4())
         if request.json is not None:
             path = request.json['filepath']
+            path = 'cementstrength-prediction-batch-files'
 
-            pred_val = pred_validation(path) #object initialization
+            pred_val = pred_validation(path,execution_id) #object initialization
 
             pred_val.prediction_validation() #calling the prediction_validation function
 
-            pred = prediction(path) #object initialization
+            pred = prediction(path,execution_id) #object initialization
 
             # predicting for dataset present in database
-            path = pred.predictionFromModel()
-            return Response("Prediction File created at %s!!!" % path)
+            path,json_predictions = pred.predictionFromModel()
+            return Response("Prediction File created at azure container !!!"  +str(path) +'and few of the predictionss are '+str(json.loads(json_predictions) ))
         elif request.form is not None:
             path = request.form['filepath']
+            path = 'cementstrength-prediction-batch-files'
 
-            pred_val = pred_validation(path) #object initialization
+            pred_val = pred_validation(path,execution_id) #object initialization
 
             pred_val.prediction_validation() #calling the prediction_validation function
 
-            pred = prediction(path) #object initialization
+            pred = prediction(path,execution_id) #object initialization
 
             # predicting for dataset present in database
-            path = pred.predictionFromModel()
-            return Response("Prediction File created at %s!!!" % path)
+            path,json_predictions = pred.predictionFromModel()
+            return Response("Prediction File created at !!!"  +str(path) +'and few of the predictions are '+str(json.loads(json_predictions) ))
+        else:
+            print('Nothing Matched')
 
     except ValueError:
         return Response("Error Occurred! %s" %ValueError)
@@ -64,24 +71,18 @@ def predictRouteClient():
 def trainRouteClient():
 
     try:
+        execution_id = str(uuid.uuid4())
+
         if request.json['folderPath'] is not None:
             path = request.json['folderPath']
-            train_valObj = train_validation(path) #object initialization
+            #path = 'cementstrength-training-batch-files'
+            train_valObj = train_validation(path,execution_id) #object initialization
 
             train_valObj.train_validation()#calling the training_validation function
 
 
-            trainModelObj = trainModel() #object initialization
+            trainModelObj = trainModel(execution_id) #object initialization
             trainModelObj.trainingModel() #training the model for the files in the table
-
-
-    except ValueError:
-
-        return Response("Error Occurred! %s" % ValueError)
-
-    except KeyError:
-
-        return Response("Error Occurred! %s" % KeyError)
 
     except Exception as e:
 

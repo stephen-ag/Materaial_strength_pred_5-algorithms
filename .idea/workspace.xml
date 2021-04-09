@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/../../../waferFaultDetection/code/WaferFaultDetection_new/trainingModel.py" description="        self.log_db_writer.log(self.log_database, ..." line="40" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="90149df8-7bc6-4ccf-84d3-a847d7fe03d7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Training_Database/Training.db" beforeDir="false" afterPath="$PROJECT_DIR$/Training_Database/Training.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Training_FileFromDB/InputFile.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Training_FileFromDB/InputFile.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Training_Logs/DataBaseConnectionLog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Training_Logs/DataBaseConnectionLog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Training_Logs/DbInsertLog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Training_Logs/DbInsertLog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Training_Logs/DbTableCreateLog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Training_Logs/DbTableCreateLog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Training_Logs/ExportToCsv.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Training_Logs/ExportToCsv.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Training_Logs/GeneralLog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Training_Logs/GeneralLog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Training_Logs/ModelTrainingLog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Training_Logs/ModelTrainingLog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Training_Logs/Training_Main_Log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Training_Logs/Training_Main_Log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Training_Logs/columnValidationLog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Training_Logs/columnValidationLog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Training_Logs/missingValuesInColumn.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Training_Logs/missingValuesInColumn.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Training_Logs/nameValidationLog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Training_Logs/nameValidationLog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Training_Logs/valuesfromSchemaValidationLog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Training_Logs/valuesfromSchemaValidationLog.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTransformation_Prediction/DataTransformationPrediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataTransformation_Prediction/DataTransformationPrediction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTypeValidation_Insertion_Prediction/DataTypeValidationPrediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataTypeValidation_Insertion_Prediction/DataTypeValidationPrediction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataTypeValidation_Insertion_Training/DataTypeValidation.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataTypeValidation_Insertion_Training/DataTypeValidation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Prediction_Raw_Data_Validation/predictionDataValidation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prediction_Raw_Data_Validation/predictionDataValidation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Training_Raw_data_validation/rawValidation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training_Raw_data_validation/rawValidation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XG_BoostRegressor2.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/XG_BoostRegressor2.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/best_model_finder/tuner.py" beforeDir="false" afterPath="$PROJECT_DIR$/best_model_finder/tuner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_ingestion/data_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_ingestion/data_loader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_ingestion/data_loader_prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_ingestion/data_loader_prediction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_preprocessing/clustering.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_preprocessing/clustering.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_preprocessing/preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_preprocessing/preprocessing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_operations/file_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/file_operations/file_methods.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flask_monitoringdashboard.db" beforeDir="false" afterPath="$PROJECT_DIR$/flask_monitoringdashboard.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/KMeans/KMeans.sav" beforeDir="false" afterPath="$PROJECT_DIR$/models/KMeans/KMeans.sav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/RandomForestRegressor0/RandomForestRegressor0.sav" beforeDir="false" afterPath="$PROJECT_DIR$/models/RandomForestRegressor0/RandomForestRegressor0.sav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/RandomForestRegressor1/RandomForestRegressor1.sav" beforeDir="false" afterPath="$PROJECT_DIR$/models/RandomForestRegressor1/RandomForestRegressor1.sav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/RandomForestRegressor2/RandomForestRegressor2.sav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/RandomForestRegressor3/RandomForestRegressor3.sav" beforeDir="false" afterPath="$PROJECT_DIR$/models/RandomForestRegressor3/RandomForestRegressor3.sav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/predictFromModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictFromModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prediction_Validation_Insertion.py" beforeDir="false" afterPath="$PROJECT_DIR$/prediction_Validation_Insertion.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/preprocessing_data/K-Means_Elbow.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing_data/K-Means_Elbow.PNG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema_training.json" beforeDir="false" afterPath="$PROJECT_DIR$/schema_training.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trainingModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/trainingModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_Validation_Insertion.py" beforeDir="false" afterPath="$PROJECT_DIR$/training_Validation_Insertion.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,11 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+            <state relative-caret-position="249">
+              <caret line="31" column="43" lean-forward="true" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -46,22 +47,61 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trainingModel.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/predictFromModel.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1395">
-              <caret line="99" column="56" selection-start-line="99" selection-start-column="56" selection-end-line="99" selection-end-column="56" />
+            <state relative-caret-position="84">
+              <caret line="74" selection-start-line="74" selection-end-line="83" selection-end-column="79" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/best_model_finder/tuner.py">
+        <entry file="file://$PROJECT_DIR$/file_operations/file_methods.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="159" column="13" lean-forward="true" selection-start-line="159" selection-start-column="13" selection-end-line="159" selection-end-column="13" />
+            <state relative-caret-position="-95">
+              <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
               <folding>
-                <element signature="e#1#49#0" expanded="true" />
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AzureBlobStorage/AzureStorageMgmt.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1875">
+              <caret line="316" lean-forward="true" selection-start-line="316" selection-end-line="316" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Prediction_Raw_Data_Validation/predictionDataValidation.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3657">
+              <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_ingestion/data_loader_prediction.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="705">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -81,7 +121,34 @@
       <find>ineur</find>
       <find>pred</find>
       <find>my-4 title</find>
+      <find>logger_object</find>
+      <find>AzureBlobManagement</find>
+      <find>mongoDBObject</find>
+      <find>az_blob_mgt</find>
+      <find>Batch_Directory</find>
+      <find>wafer</find>
+      <find>saved.</find>
+      <find>adaboostReg</find>
+      <find>XG-</find>
+      <find>training</find>
+      <find>InputFile.csv&quot;</find>
+      <find>training_database</find>
+      <find>training_collection</find>
+      <find>strength_prediction_log</find>
+      <find>good-raw-file-prediction-validated</find>
+      <find>prediction_database&quot;</find>
+      <find>log_writer</find>
+      <find>self.file_object,self.log_writer</find>
+      <find>self.file_object</find>
+      <find>prediction_file</find>
+      <find>dataframe</find>
+      <find>prediction</find>
+      <find>.sav</find>
     </findStrings>
+    <replaceStrings>
+      <replace>log_db_writer</replace>
+      <replace>self.log_database,self.log_collection</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -90,18 +157,35 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/trainingModel.py" />
+        <option value="$PROJECT_DIR$/AzureBlobStorage/AzureStorageMgmt.py" />
+        <option value="$PROJECT_DIR$/DataTransformation_Prediction/DataTransformationPrediction.py" />
+        <option value="$PROJECT_DIR$/data_ingestion/data_loader.py" />
+        <option value="$PROJECT_DIR$/schema_training.json" />
         <option value="$PROJECT_DIR$/best_model_finder/tuner.py" />
+        <option value="$PROJECT_DIR$/trainingModel.py" />
+        <option value="$PROJECT_DIR$/data_preprocessing/clustering.py" />
+        <option value="$PROJECT_DIR$/Training_Raw_data_validation/rawValidation.py" />
+        <option value="$PROJECT_DIR$/training_Validation_Insertion.py" />
+        <option value="$PROJECT_DIR$/DataTypeValidation_Insertion_Training/DataTypeValidation.py" />
+        <option value="$PROJECT_DIR$/mongoDBoperation.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/prediction_Validation_Insertion.py" />
+        <option value="$PROJECT_DIR$/DataTypeValidation_Insertion_Prediction/DataTypeValidationPrediction.py" />
+        <option value="$PROJECT_DIR$/data_preprocessing/preprocessing.py" />
+        <option value="$PROJECT_DIR$/Prediction_Raw_Data_Validation/predictionDataValidation.py" />
+        <option value="$PROJECT_DIR$/data_ingestion/data_loader_prediction.py" />
+        <option value="$PROJECT_DIR$/file_operations/file_methods.py" />
+        <option value="$PROJECT_DIR$/predictFromModel.py" />
       </list>
     </option>
   </component>
   <component name="JupyterTrust" id="6a3ee546-02e5-4070-baf0-ba936f633745" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="24" />
-    <option name="width" value="1280" />
-    <option name="height" value="776" />
+    <option name="x" value="10" />
+    <option name="y" value="82" />
+    <option name="width" value="1270" />
+    <option name="height" value="718" />
   </component>
   <component name="ProjectId" id="1Y1MTAtfIL8Gw3H6zrZJ6IVPki7" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -114,18 +198,8 @@
         <subPane>
           <expand>
             <path>
-              <item name="cement_strength_reg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cement_strength_reg_Azure" type="b2602c69:ProjectViewProjectNode" />
               <item name="cement_strength_reg" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cement_strength_reg" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cement_strength_reg" type="462c0819:PsiDirectoryNode" />
-              <item name="Materaial_strength_pred_5-algorithms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cement_strength_reg" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cement_strength_reg" type="462c0819:PsiDirectoryNode" />
-              <item name="TrainingArchiveBadData" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -145,6 +219,12 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/application_logging" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -157,7 +237,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.trainingModel">
+  <component name="RunManager" selected="Python.main">
+    <configuration name="file_methods" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="cement_strenth_reg" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/file_operations" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/file_operations/file_methods.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="cement_strenth_reg" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -180,7 +281,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="mongoDBoperation" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="cement_strenth_reg" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -192,8 +293,28 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mongoDBoperation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="rawValidation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="cement_strenth_reg" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Training_Raw_data_validation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Training_Raw_data_validation/rawValidation.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -225,9 +346,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.trainingModel" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.test" />
+        <item itemvalue="Python.file_methods" />
+        <item itemvalue="Python.mongoDBoperation" />
+        <item itemvalue="Python.trainingModel" />
+        <item itemvalue="Python.rawValidation" />
       </list>
     </recent_temporary>
   </component>
@@ -262,7 +385,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.50073636" side_tool="true" weight="0.24582338" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.48979592" visible="true" weight="0.33146966" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.48979592" visible="true" weight="0.26277956" />
       <window_info id="Structure" order="2" sideWeight="0.5102041" side_tool="true" weight="0.2971246" />
       <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.75958467" weight="0.32876712" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.24041533" side_tool="true" weight="0.32876712" />
@@ -270,7 +393,7 @@
       <window_info anchor="bottom" id="Python Console" order="3" weight="0.32876712" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.7635783" weight="0.32876712" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.7635783" visible="true" weight="0.34855404" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39878234" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -330,38 +453,33 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/training_Validation_Insertion.py</url>
-          <line>29</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/DataTypeValidation_Insertion_Training/DataTypeValidation.py</url>
-          <line>164</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/training_Validation_Insertion.py</url>
-          <line>49</line>
+          <line>69</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/DataTypeValidation_Insertion_Prediction/DataTypeValidationPrediction.py</url>
-          <line>80</line>
+          <line>171</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/DataTypeValidation_Insertion_Prediction/DataTypeValidationPrediction.py</url>
-          <line>147</line>
+          <line>238</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/predictFromModel.py</url>
-          <line>59</line>
-          <option name="timeStamp" value="17" />
+          <url>file://$PROJECT_DIR$/file_operations/file_methods.py</url>
+          <line>33</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/best_model_finder/tuner.py</url>
-          <line>270</line>
-          <option name="timeStamp" value="18" />
+          <url>file://$PROJECT_DIR$/file_operations/file_methods.py</url>
+          <line>66</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/DataTypeValidation_Insertion_Training/DataTypeValidation.py</url>
+          <line>96</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -370,55 +488,6 @@
     <SUITE FILE_PATH="coverage/cement_strength_reg$main.coverage" NAME="main Coverage Results" MODIFIED="1586857084874" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Prediction_Raw_Data_Validation/predictionDataValidation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataTypeValidation_Insertion_Training/DataTypeValidation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prediction_Logs/DataBaseConnectionLog.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prediction_Logs/columnValidationLog.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/predictFromModel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-380">
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prediction_Logs/DbTableCreateLog.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prediction_Logs/DbInsertLog.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Prediction_Logs/ExportToCsv.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -447,16 +516,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1440">
           <caret line="96" column="47" selection-start-line="96" selection-start-column="47" selection-end-line="96" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/training_Validation_Insertion.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -508,40 +567,6 @@
         <state relative-caret-position="-30586" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prediction_Validation_Insertion.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#94#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_preprocessing/preprocessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2286">
-          <caret line="42" column="30" lean-forward="true" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Training_Logs/Training_Main_Log.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Training_Logs/GeneralLog.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/miniconda3/envs/cement_strength_reg/lib/python3.7/site-packages/sklearn/model_selection/_split.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
@@ -577,31 +602,96 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/miniconda3/envs/cement_strength_reg/lib/python3.7/site-packages/flask_monitoringdashboard/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/application_logging/logger.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="195">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application_logging/loggerDB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataTransformation_Prediction/DataTransformationPrediction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Training_Logs/GeneralLog.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataTransform_Training/DataTransformation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/miniconda3/envs/cement_strength_reg/lib/python3.7/site-packages/pandas/core/generic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="3205" column="8" selection-start-line="3205" selection-start-column="8" selection-end-line="3205" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/miniconda3/envs/cement_strength_reg/lib/python3.7/site-packages/pymongo/collection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="703" column="8" selection-start-line="703" selection-start-column="8" selection-end-line="703" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schema_training.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Training_Logs/Training_Main_Log.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Training_Logs/ModelTrainingLog.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="678" column="53" selection-start-line="678" selection-start-column="46" selection-end-line="678" selection-end-column="53" />
+        <state relative-caret-position="15">
+          <caret line="667" column="65" selection-start-line="667" selection-start-column="65" selection-end-line="667" selection-end-column="65" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/file_operations/file_methods.py">
+    <entry file="file://$PROJECT_DIR$/data_preprocessing/clustering.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-37">
-          <caret line="20" column="38" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="38" />
+        <state relative-caret-position="163">
+          <caret line="53" column="44" lean-forward="true" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/best_model_finder/tuner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="159" column="13" lean-forward="true" selection-start-line="159" selection-start-column="13" selection-end-line="159" selection-end-column="13" />
+        <state relative-caret-position="434">
+          <caret line="291" selection-start-line="291" selection-end-line="291" />
           <folding>
             <element signature="e#1#49#0" expanded="true" />
           </folding>
@@ -610,17 +700,171 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/trainingModel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1395">
-          <caret line="99" column="56" selection-start-line="99" selection-start-column="56" selection-end-line="99" selection-end-column="56" />
+        <state relative-caret-position="395">
+          <caret line="114" column="43" selection-start-line="114" selection-start-column="43" selection-end-line="114" selection-end-column="43" />
+          <folding>
+            <element signature="e#379#431#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mongoDBoperation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3649">
+          <caret line="296" column="2" lean-forward="true" selection-start-line="296" selection-start-column="2" selection-end-line="296" selection-end-column="2" />
+          <folding>
+            <element signature="e#1#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Training_Raw_data_validation/rawValidation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6962">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="e#16#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schema_prediction.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_ingestion/data_loader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="16" column="63" lean-forward="true" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/training_Validation_Insertion.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="70" column="49" lean-forward="true" selection-start-line="70" selection-start-column="49" selection-end-line="70" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataTypeValidation_Insertion_Training/DataTypeValidation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="82" column="12" lean-forward="true" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_preprocessing/preprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="207" column="8" selection-start-line="207" selection-start-column="8" selection-end-line="207" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataTypeValidation_Insertion_Prediction/DataTypeValidationPrediction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1151">
+          <caret line="93" column="30" lean-forward="true" selection-start-line="93" selection-start-column="30" selection-end-line="93" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prediction_Validation_Insertion.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#94#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/miniconda3/envs/cement_strength_reg/lib/python3.7/site-packages/pandas/io/parsers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="540" column="4" selection-start-line="540" selection-start-column="4" selection-end-line="540" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.3/system/python_stubs/1918628844/posix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-140">
+          <caret line="588" column="4" selection-start-line="588" selection-start-column="4" selection-end-line="588" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_ingestion/data_loader_prediction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prediction_Raw_Data_Validation/predictionDataValidation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3657">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file_operations/file_methods.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-95">
+          <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AzureBlobStorage/AzureStorageMgmt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1875">
+          <caret line="316" lean-forward="true" selection-start-line="316" selection-end-line="316" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        <state relative-caret-position="249">
+          <caret line="31" column="43" lean-forward="true" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/predictFromModel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="74" selection-start-line="74" selection-end-line="83" selection-end-column="79" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>

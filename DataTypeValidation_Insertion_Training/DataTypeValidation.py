@@ -1,10 +1,106 @@
 import shutil
 import sqlite3
-from datetime import datetime
+#from datetime import datetime
 from os import listdir
 import os
 import csv
+#import pymongo
+
+from mongoDBoperation import MongodbOperation
+# from python file import class name
+from AzureBlobStorage.AzureStorageMgmt import AzureBlobManagement
+# from folder and python file name import class name
+from application_logging.loggerDB import App_LoggerDB
+#from folder and python file import class name
 from application_logging.logger import App_Logger
+
+
+
+
+class DbOperationMongoDB:
+    """
+      This class shall be used for handling all the SQL operations.
+
+      Written By: iNeuron Intelligence
+      Version: 1.0
+      Revisions: None
+
+      """
+    def __init__(self, execution_id):
+        self.mongodb = MongodbOperation()
+        self.az_blob_mgt= AzureBlobManagement()
+        self.logger_db_writer = App_LoggerDB(execution_id=execution_id)
+        self.good_file_path = "good-raw-file-train-validated"
+        self.bad_file_path = "bad-raw-file-train-validated"
+
+    def insertIntoTableGoodData(self, column_name):
+        """
+        Description: Load all csv file into mongo db database "training_database" ,collection:"Good_Raw_Data"
+
+        :return:
+        """
+        #prediction_database = "prediction_database"  # mongodb name
+        #prediction_collection = "Good_Raw_Data"  # mongodb name
+        database_name = "strength_training_log"
+        collection_name = "db_insert_log"
+
+        try:
+            training_database="training_database"
+            training_collection="Good_Raw_Data"
+            database_name = "strength_training_log"  # logger name
+            collection_name = "db_insert_log"  # logger name
+            self.logger_db_writer.log(database_name,collection_name,"Droping existing collection if present in database training_database")
+            self.mongodb.dropCollection(training_database,training_collection)
+
+            self.logger_db_writer.log(database_name,collection_name,"Starting loading of good files in database:training_database and collection: Good_Raw_Data")
+            files = self.az_blob_mgt.getAllFileNameFromDirectory(self.good_file_path)
+            self.logger_db_writer.log(database_name,collection_name,"No of file found in good-raw-file-train-validated "+str(len(files)))
+            for file in files:
+                try:
+                    self.logger_db_writer.log(database_name,collection_name,"Insertion of file "+file+" started...")
+                    df=self.az_blob_mgt.readCSVFilefromDir(self.good_file_path,file)
+                    df.columns = column_name
+                    self.mongodb.insertDataFrame(training_database,training_collection,df)
+                    self.logger_db_writer.log(database_name,collection_name,"File: {0} loaded successfully".format(file))
+                except Exception as e:
+                    self.logger_db_writer.log(database_name,collection_name,str(e))
+                    self.az_blob_mgt.moveFileinDir(self.good_file_path, self.bad_file_path, file)
+                    self.logger_db_writer.log(database_name, collection_name,
+                                              "File " + file + " was not loaded successfully hence moved tp dir:" + self.bad_file_path)
+
+        except Exception as e:
+            error_message="Error occured in class:DbOperationMongoDB method:insertIntoTableGoodData error:"+str(e)
+            self.logger_db_writer.log(database_name,collection_name,error_message)
+
+
+    def selectingDatafromtableintocsv(self,):
+        """
+
+        :return:
+        """
+        database_name = "cement_strength_training_log"
+        collection_name = "export_to_csv"
+        try:
+            directory_name="strength-training-file-from-db"
+            file_name="InputFile"
+
+            training_database="training_database"
+            training_collection="Good_Raw_Data"
+            msg="starting of loading of database:training_database,collection:Good_Raw_Data records into InputFile.csv"
+            print(msg)
+            self.logger_db_writer.log(database_name,collection_name,msg)
+            df=self.mongodb.getDataFrameofCollection(training_database,training_collection)
+            print(df)
+            msg="Good_Raw_data has been loaded into pandas dataframe"
+            print(msg)
+            self.logger_db_writer.log(database_name,collection_name,msg)
+            self.az_blob_mgt.saveDataFrametoCSV(directory_name,file_name,df)
+            msg = "InputFile.csv created successfully in directory " + directory_name
+            self.logger_db_writer.log(database_name, collection_name, msg)
+        except Exception as e:
+            msg="Error occured in class:DbOperationMongoDB method:insertIntoTableGoodData error:"+str(e)
+            self.logger_db_writer.log(database_name,collection_name,msg)
+
 
 
 class dBOperation:
@@ -16,12 +112,12 @@ class dBOperation:
       Revisions: None
 
       """
+
     def __init__(self):
         self.path = 'Training_Database/'
         self.badFilePath = "Training_Raw_files_validated/Bad_Raw"
         self.goodFilePath = "Training_Raw_files_validated/Good_Raw"
         self.logger = App_Logger()
-
 
     def dataBaseConnection(self,DatabaseName):
 
@@ -61,6 +157,7 @@ class dBOperation:
                         Revisions: None
 
                         """
+        conn = self.dataBaseConnection(DatabaseName)
         try:
             conn = self.dataBaseConnection(DatabaseName)
             c=conn.cursor()
@@ -89,14 +186,6 @@ class dBOperation:
                         conn.execute('CREATE TABLE  Good_Raw_Data ({column_name} {dataType})'.format(column_name=key, dataType=type))
 
 
-                    # try:
-                    #     #cur.execute("SELECT name FROM {dbName} WHERE type='table' AND name='Bad_Raw_Data'".format(dbName=DatabaseName))
-                    #     conn.execute('ALTER TABLE Bad_Raw_Data ADD COLUMN "{column_name}" {dataType}'.format(column_name=key,dataType=type))
-                    #
-                    # except:
-                    #     conn.execute('CREATE TABLE Bad_Raw_Data ({column_name} {dataType})'.format(column_name=key, dataType=type))
-
-
                 conn.close()
 
                 file = open("Training_Logs/DbTableCreateLog.txt", 'a+')
@@ -108,6 +197,7 @@ class dBOperation:
                 file.close()
 
         except Exception as e:
+
             file = open("Training_Logs/DbTableCreateLog.txt", 'a+')
             self.logger.log(file, "Error while creating table: %s " % e)
             file.close()
@@ -215,5 +305,7 @@ class dBOperation:
 
 
 
+#h= DbOperationMongoDB(321)
+#c= h.selectingDatafromtableintocsv()
 
 

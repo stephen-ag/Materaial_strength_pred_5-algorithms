@@ -12,6 +12,13 @@ from xgboost import XGBRegressor
 import pandas as pd
 import openpyxl
 
+from mongoDBoperation import MongodbOperation
+# from python file import class name
+from AzureBlobStorage.AzureStorageMgmt import AzureBlobManagement
+# from folder and python file name import class name
+from application_logging.loggerDB import App_LoggerDB
+
+
 
 class Model_Finder:
     """
@@ -22,9 +29,17 @@ class Model_Finder:
 
                 """
 
-    def __init__(self,file_object,logger_object):
-        self.file_object = file_object
-        self.logger_object = logger_object
+    def __init__(self,log_database,log_collection,execution_id):
+        #self.file_object = file_object
+        #self.logger_object = logger_object
+
+        self.execution_id=execution_id
+        self.log_db_writer=App_LoggerDB(execution_id=execution_id)
+        self.log_database=log_database
+        self.log_collection=log_collection
+        self.az_blob_mgt=AzureBlobManagement()
+        self.mongoDBObject = MongodbOperation()
+
         self.linearReg = LinearRegression()
         self.RandomForestReg = RandomForestRegressor()
         self.DecisionTreeReg = DecisionTreeRegressor()
@@ -49,7 +64,7 @@ class Model_Finder:
                                                 Revisions: None
 
                                         """
-        self.logger_object.log(self.file_object,
+        self.log_db_writer.log(self.log_database,self.log_collection,
                                'Entered the RandomForestReg method of the Model_Finder class')
         try:
             # initializing with different combination of parameters
@@ -76,20 +91,20 @@ class Model_Finder:
                                                          min_samples_split=self.min_samples_split, bootstrap=self.bootstrap)
             # training the mew models
             self.randomForestReg.fit(train_x, train_y)
-            self.logger_object.log(self.file_object,
+            self.log_db_writer.log(self.log_database,self.log_collection,
                                    'RandomForestReg best params: ' + str(
                                        self.grid.best_params_) + '. Exited the RandomForestReg method of the Model_Finder class')
             return self.randomForestReg
         except Exception as e:
-            self.logger_object.log(self.file_object,
+            self.log_db_writer.log(self.log_database,self.log_collection,
                                    'Exception occured in RandomForestReg method of the Model_Finder class. Exception message:  ' + str(
                                        e))
-            self.logger_object.log(self.file_object,
+            self.log_db_writer.log(self.log_database,self.log_collection,
                                    'RandomForestReg Parameter tuning  failed. Exited the knn method of the Model_Finder class')
             raise Exception()
 
     def get_best_params_for_xgboost(self, train_x, train_y):
-        self.logger_object.log(self.file_object,
+        self.log_db_writer.log(self.log_database,self.log_collection,
                                'Entered the XG boost Reg method of the Model_Finder class')
         try:
             # initializing with different combination of parameters
@@ -118,21 +133,21 @@ class Model_Finder:
 
             # training the mew models
             self.xgboostReg.fit(train_x, train_y)
-            self.logger_object.log(self.file_object,
+            self.log_db_writer.log(self.log_database,self.log_collection,
                                    'xgboostReg best params: ' + str(
                                        self.grid.best_params_) + '. Exited the DecisionTreeReg  method of the Model_Finder class')
             return self.xgboostReg
         except Exception as e:
-            self.logger_object.log(self.file_object,
+            self.log_db_writer.log(self.log_database,self.log_collection,
                                    'Exception occured in xgboostReg   method of the Model_Finder class. Exception message:  ' + str(
                                        e))
-            self.logger_object.log(self.file_object,
+            self.log_db_writer.log(self.log_database,self.log_collection,
                                    'xgboostReg   Parameter tuning  failed. Exited the knn method of the Model_Finder class')
             raise Exception()
 
 
     def get_best_params_for_decisionTree(self, train_x, train_y):
-        self.logger_object.log(self.file_object,
+        self.log_db_writer.log(self.log_database,self.log_collection,
                                'Entered the Decision Tree Reg method of the Model_Finder class')
         try:
             # initializing with different combination of parameters
@@ -161,21 +176,21 @@ class Model_Finder:
                                                         )
             # training the mew models
             self.decisionTreeReg.fit(train_x, train_y)
-            self.logger_object.log(self.file_object,
+            self.log_db_writer.log(self.log_database,self.log_collection,
                                    'DecisionTreeReg best params: ' + str(
                                        self.grid.best_params_) + '. Exited the DecisionTreeReg  method of the Model_Finder class')
             return self.decisionTreeReg
         except Exception as e:
-            self.logger_object.log(self.file_object,
+            self.log_db_writer.log(self.log_database,self.log_collection,
                                    'Exception occured in DecisionTreeReg  method of the Model_Finder class. Exception message:  ' + str(
                                        e))
-            self.logger_object.log(self.file_object,
+            self.log_db_writer.log(self.log_database,self.log_collection,
                                    'DecisionTreeReg  Parameter tuning  failed. Exited the knn method of the Model_Finder class')
             raise Exception()
 
     def get_best_params_for_adaboostReg(self, train_x, train_y):
 
-        self.logger_object.log(self.file_object,
+        self.log_db_writer.log(self.log_database,self.log_collection,
                                'Entered the Adda boost Reg method of the Model_Finder class')
         try:
             # initializing with different combination of parameters
@@ -199,15 +214,15 @@ class Model_Finder:
 
             #training the mew models
             self.adaboostReg.fit(train_x, train_y)
-            self.logger_object.log(self.file_object,
+            self.log_db_writer.log(self.log_database,self.log_collection,
                                    'Ada boost best params: ' + str(
                                        self.grid.best_params_) + '. Exited the AdaBoost Reg  method of the Model_Finder class')
             return self.adaboostReg
         except Exception as e:
-            self.logger_object.log(self.file_object,
+            self.log_db_writer.log(self.log_database,self.log_collection,
                                    'Exception occured in Ada BoostReg method of the Model_Finder class. Exception message:  ' + str(
                                        e))
-            self.logger_object.log(self.file_object,
+            self.log_db_writer.log(self.log_database,self.log_collection,
                                    'Adaboost Reg  Parameter tuning  failed. Exited the knn method of the Model_Finder class')
             raise Exception()
 
@@ -225,7 +240,7 @@ class Model_Finder:
                                         Revisions: None
 
                                 """
-        self.logger_object.log(self.file_object,
+        self.log_db_writer.log(self.log_database,self.log_collection,
                                'Entered the get_best_params_for_linearReg method of the Model_Finder class')
         try:
             # initializing with different combination of parameters
@@ -246,21 +261,21 @@ class Model_Finder:
             self.linReg = LinearRegression(fit_intercept=self.fit_intercept,normalize=self.normalize,copy_X=self.copy_X)
             # training the mew model
             self.linReg.fit(train_x, train_y)
-            self.logger_object.log(self.file_object,
+            self.log_db_writer.log(self.log_database,self.log_collection,
                                    'LinearRegression best params: ' + str(
                                        self.grid.best_params_) + '. Exited the get_best_params_for_linearReg method of the Model_Finder class')
             return self.linReg
         except Exception as e:
-            self.logger_object.log(self.file_object,
+            self.log_db_writer.log(self.log_database,self.log_collection,
                                    'Exception occured in get_best_params_for_linearReg method of the Model_Finder class. Exception message:  ' + str(
                                        e))
-            self.logger_object.log(self.file_object,
+            self.log_db_writer.log(self.log_database,self.log_collection,
                                    'LinearReg Parameter tuning  failed. Exited the get_best_params_for_linearReg method of the Model_Finder class')
             raise Exception()
 
     def get_model_metrics(self,name):
 
-        self.logger_object.log(self.file_object,
+        self.log_db_writer.log(self.log_database,self.log_collection,
                                'Entered the get_model Metrics of the Model_Finder class')
 
         self.Reg_metrics = pd.DataFrame(self.Regression_score)
@@ -280,7 +295,7 @@ class Model_Finder:
                                                 Revisions: None
 
                                         """
-        self.logger_object.log(self.file_object,
+        self.log_db_writer.log(self.log_database,self.log_collection,
                                'Entered the get_best_model method of the Model_Finder class')
 
         try:
@@ -323,13 +338,13 @@ class Model_Finder:
             self.adaboostReg_mae=mean_absolute_error(test_y, self.prediction_adaboostReg)
 
             self.Regression_score={"LinearRegression":[self.LinearReg_error,self.LinearReg,self.LinearReg_mse,self.LinearReg_mae],
-                          "RandomForestRegressor":[self.prediction_randomForestReg_error,self.randomForestReg,
+                          "randomForestRegressor":[self.prediction_randomForestReg_error,self.randomForestReg,
                                                    self.randomForestReg_mse,self.randomForestReg_mae],
-                          "XG_BoostRegressor" : [self.prediction_xgboostReg_error,self.XGBoostReg,
+                          "xg-BoostRegressor" : [self.prediction_xgboostReg_error,self.XGBoostReg,
                                                  self.XGBoostReg_mse,self.XGBoostReg_mae],
-                          "DecisionTreeRegressor" : [self.prediction_decisionTreeReg_error,self.decisionTreeReg,
+                          "decisionTreeRegressor" : [self.prediction_decisionTreeReg_error,self.decisionTreeReg,
                                                      self.decisionTreeReg_mse,self.decisionTreeReg_mae],
-                          "Ada_BoostRegressor" : [self.prediction_adaboostReg_error,self.adaboostReg,
+                          "ada-BoostRegressor" : [self.prediction_adaboostReg_error,self.adaboostReg,
                                                   self.adaboostReg_mse,self.adaboostReg_mae]
                           }
 
@@ -354,10 +369,10 @@ class Model_Finder:
            # #    return 'LinearRegression',self.LinearReg
 
         except Exception as e:
-            self.logger_object.log(self.file_object,
+            self.log_db_writer.log(self.log_database,self.log_collection,
                                    'Exception occured in get_best_model method of the Model_Finder class. Exception message:  ' + str(
                                        e))
-            self.logger_object.log(self.file_object,
+            self.log_db_writer.log(self.log_database,self.log_collection,
                                    'Model Selection Failed. Exited the get_best_model method of the Model_Finder class')
             raise Exception()
 

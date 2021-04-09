@@ -5,6 +5,97 @@ import os
 import csv
 from application_logging.logger import App_Logger
 
+from mongoDBoperation import MongodbOperation
+from AzureBlobStorage.AzureStorageMgmt import AzureBlobManagement
+from application_logging.loggerDB import App_LoggerDB
+
+
+class DbOperationMongoDB:
+    """
+          This class shall be used for handling all the mongodb operations.
+
+          Written By: iNeuron Intelligence
+          Version: 1.0
+          Revisions: None
+
+          """
+
+    def __init__(self, execution_id):
+        self.mongodb=MongodbOperation()
+        self.az_blob_mgt=AzureBlobManagement()
+        self.logger_db_writer=App_LoggerDB(execution_id=execution_id)
+        self.good_file_path="good-raw-file-prediction-validated"
+        self.bad_file_path="bad-raw-file-prediction-validated"
+
+
+    def insertIntoTableGoodData(self,column_names):
+        """
+        Description: Load all csv file into mongo db database "prediction_database" ,collection:"Good_Raw_Data"
+        from azure storage -good data  and clear the storage space.
+
+        :return:
+        """
+        try:
+            prediction_database="prediction_database" # mongodb name
+            prediction_collection="Good_Raw_Data" # mongodb name
+            database_name = "strength_prediction_log" ## logger name
+            collection_name = "db_insert_log" ## logger name
+            self.mongodb.dropCollection(prediction_database,prediction_collection)
+            self.logger_db_writer.log(database_name,collection_name,"Droping collection:"+prediction_collection+" from database:"+prediction_database)
+            self.logger_db_writer.log(database_name, collection_name,"Starting loading of good files in database:training_database and collection: Good_Raw_Data")
+            files = self.az_blob_mgt.getAllFileNameFromDirectory(self.good_file_path)
+            self.logger_db_writer.log(database_name, collection_name,"No of file found in good-raw-file-train-validated " + str(len(files)))
+            for file in files:
+                try:
+                    self.logger_db_writer.log(database_name, collection_name,
+                                              "Insertion of file +" + file + " started...")
+                    df = self.az_blob_mgt.readCSVFilefromDir(self.good_file_path, file)
+                    df.columns=column_names
+                    print("dataframe before insertion")
+                    print(df)
+                    self.mongodb.insertDataFrame(prediction_database, prediction_collection, df)
+                    self.logger_db_writer.log(database_name, collection_name,
+                                              "File: {0} loaded successfully".format(file))
+                except Exception as e:
+                    self.logger_db_writer.log(database_name, collection_name, str(e))
+                    self.az_blob_mgt.moveFileinDir(self.good_file_path, self.bad_file_path, file)
+                    self.logger_db_writer.log(database_name, collection_name,
+                                              "File: " + file + " was not loaded successfully hence moved to dir:" + self.bad_file_path)
+
+        except Exception as e:
+            error_message = "Error occured in class:DbOperationMongoDB method:insertIntoTableGoodData error:" + str(e)
+            self.logger_db_writer.log(database_name, collection_name, error_message)
+
+    def selectingDatafromtableintocsv(self,):
+        """
+
+        :return:
+        """
+        try:
+            directory_name="prediction-file-from-db" # azure storage name
+            file_name="prediction-inputfile.csv" # azure storage name
+            database_name = "strength_prediction_log" # logger name
+            collection_name = "export_to_csv" # logger name
+            prediction_database="prediction_database" # mongodb name
+            prediction_collection="Good_Raw_Data" # mongodb name
+            msg="starting of loading of database:"+prediction_database+",collection:"+prediction_collection+" records into file:"+file_name
+            self.logger_db_writer.log(database_name,collection_name,msg)
+            df=self.mongodb.getDataFrameofCollection(prediction_database,prediction_collection)
+            print("after dataframe from db extraction")
+            print(df)
+            msg="Good_Raw_data has been loaded into pandas dataframe"
+            print(msg)
+            self.logger_db_writer.log(database_name,collection_name,msg)
+            self.az_blob_mgt.saveDataFrametoCSV(directory_name,file_name,df,index=None,header=True)
+            # since the inputFile.csv has unammed column, added index =0 later removed as unnamed 0.1 is present in predictionDatavalidation.py ln 410.
+            msg = "Prediction-inputfile.csv created successfully in directory"+directory_name
+            print(msg)
+            self.logger_db_writer.log(database_name, collection_name, msg)
+        except Exception as e:
+            msg="Error occured in class:DbOperationMongoDB method:insertIntoTableGoodData error:"+str(e)
+            self.logger_db_writer.log(database_name,collection_name,msg)
+
+
 
 class dBOperation:
     """
