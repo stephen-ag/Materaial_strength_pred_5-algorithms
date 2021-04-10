@@ -6,26 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="90149df8-7bc6-4ccf-84d3-a847d7fe03d7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataTransformation_Prediction/DataTransformationPrediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataTransformation_Prediction/DataTransformationPrediction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataTypeValidation_Insertion_Prediction/DataTypeValidationPrediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataTypeValidation_Insertion_Prediction/DataTypeValidationPrediction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataTypeValidation_Insertion_Training/DataTypeValidation.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataTypeValidation_Insertion_Training/DataTypeValidation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Prediction_Raw_Data_Validation/predictionDataValidation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Prediction_Raw_Data_Validation/predictionDataValidation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Training_Raw_data_validation/rawValidation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training_Raw_data_validation/rawValidation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/XG_BoostRegressor2.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/XG_BoostRegressor2.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/best_model_finder/tuner.py" beforeDir="false" afterPath="$PROJECT_DIR$/best_model_finder/tuner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_ingestion/data_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_ingestion/data_loader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_ingestion/data_loader_prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_ingestion/data_loader_prediction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_preprocessing/clustering.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_preprocessing/clustering.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_preprocessing/preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_preprocessing/preprocessing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file_operations/file_methods.py" beforeDir="false" afterPath="$PROJECT_DIR$/file_operations/file_methods.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Requirements.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/flask_monitoringdashboard.db" beforeDir="false" afterPath="$PROJECT_DIR$/flask_monitoringdashboard.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/predictFromModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/predictFromModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prediction_Validation_Insertion.py" beforeDir="false" afterPath="$PROJECT_DIR$/prediction_Validation_Insertion.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing_data/K-Means_Elbow.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing_data/K-Means_Elbow.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema_training.json" beforeDir="false" afterPath="$PROJECT_DIR$/schema_training.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainingModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/trainingModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/training_Validation_Insertion.py" beforeDir="false" afterPath="$PROJECT_DIR$/training_Validation_Insertion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/str(name).xlsx" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,73 +19,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="31" column="43" lean-forward="true" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+            <state relative-caret-position="270">
+              <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/predictFromModel.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="74" selection-start-line="74" selection-end-line="83" selection-end-column="79" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/file_operations/file_methods.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-95">
-              <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AzureBlobStorage/AzureStorageMgmt.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1875">
-              <caret line="316" lean-forward="true" selection-start-line="316" selection-end-line="316" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Prediction_Raw_Data_Validation/predictionDataValidation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3657">
-              <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_ingestion/data_loader_prediction.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="52" selection-start-line="52" selection-end-line="52" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -169,7 +93,6 @@
         <option value="$PROJECT_DIR$/training_Validation_Insertion.py" />
         <option value="$PROJECT_DIR$/DataTypeValidation_Insertion_Training/DataTypeValidation.py" />
         <option value="$PROJECT_DIR$/mongoDBoperation.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/prediction_Validation_Insertion.py" />
         <option value="$PROJECT_DIR$/DataTypeValidation_Insertion_Prediction/DataTypeValidationPrediction.py" />
         <option value="$PROJECT_DIR$/data_preprocessing/preprocessing.py" />
@@ -177,6 +100,7 @@
         <option value="$PROJECT_DIR$/data_ingestion/data_loader_prediction.py" />
         <option value="$PROJECT_DIR$/file_operations/file_methods.py" />
         <option value="$PROJECT_DIR$/predictFromModel.py" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
@@ -194,6 +118,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -205,7 +130,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -382,18 +306,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1280" height="776" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.50073636" side_tool="true" weight="0.24582338" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.48979592" visible="true" weight="0.26277956" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.48979592" visible="true" weight="0.26277956" />
       <window_info id="Structure" order="2" sideWeight="0.5102041" side_tool="true" weight="0.2971246" />
-      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.75958467" weight="0.32876712" />
+      <window_info anchor="bottom" id="Terminal" order="0" sideWeight="0.75958467" visible="true" weight="0.32876712" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.24041533" side_tool="true" weight="0.32876712" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Python Console" order="3" weight="0.32876712" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.7635783" visible="true" weight="0.34855404" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.7635783" weight="0.34855404" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39878234" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -519,13 +442,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="590">
@@ -539,9 +455,6 @@
           <caret line="723" column="8" selection-start-line="723" selection-start-column="8" selection-end-line="723" selection-end-column="8" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -809,29 +722,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_ingestion/data_loader_prediction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prediction_Raw_Data_Validation/predictionDataValidation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3657">
-          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/file_operations/file_methods.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-95">
+        <state relative-caret-position="15">
           <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
@@ -841,30 +734,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AzureBlobStorage/AzureStorageMgmt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1875">
-          <caret line="316" lean-forward="true" selection-start-line="316" selection-end-line="316" />
+        <state relative-caret-position="346">
+          <caret line="316" selection-start-line="316" selection-end-line="316" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/Prediction_Raw_Data_Validation/predictionDataValidation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="31" column="43" lean-forward="true" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+        <state relative-caret-position="15">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
           <folding>
-            <element signature="e#0#33#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_ingestion/data_loader_prediction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/predictFromModel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="74" selection-start-line="74" selection-end-line="83" selection-end-column="79" />
+        <state relative-caret-position="125">
+          <caret line="79" column="58" lean-forward="true" selection-start-line="79" selection-start-column="58" selection-end-line="79" selection-end-column="58" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.yaml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
