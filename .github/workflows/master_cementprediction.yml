@@ -59,4 +59,4 @@ jobs:
         with:
           app-name: 'cementprediction'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_bc6ad0b1fe594ffd8fa58f8c6890762b }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_f178a67d99ac4129863d751a99dbe216 }}
